@@ -1,0 +1,16 @@
+
+section > div.layer.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: auto;
+    overflow: hidden;
+}
+
+section > div > img {
+    height: 100vh;
+    border: 1px ;
+    border-color: red;
+}

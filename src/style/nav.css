@@ -1,0 +1,8 @@
+#navbar {
+    --bs-bg-opacity: 0.65
+}
+
+#navbar > img{
+    height: 50px
+}
+

@@ -1,0 +1,99 @@
+@import "common/helper";
+
+.header-widget {
+  background-color:  var(--top-bar-bg-color);
+  background:  var(--top-bar-bg-color);
+
+  a.button.is-dark {
+    color: var(--primary-text-color);
+  
+    &:hover,
+    &:hover .iconfont {
+      i{
+        text-decoration: none;
+        color: $activeColor!important;
+        animation: bounce 1s ease infinite;
+      }
+    }
+  }
+
+
+  i {
+    margin: 0 8px;
+  }
+  
+  h3 {
+    font-weight: bold;
+  }
+
+  .is-dark{
+    background: var(--top-bar-bg-color);
+  }
+  
+  
+}
+
+nav#navbar{
+  transition: all .4s ease-in-out;
+  background-color:  var(--top-bar-bg-color);
+  background:  var(--top-bar-bg-color);
+
+}
+
+.scroll-down{
+  transform: translateY(-100%);
+}
+.scroll-up{
+  filter: drop-shadow(0 -10px 20px var(--primary-bg-color));
+}
+
+
+.navbar.is-dark .navbar-brand,
+.navbar.is-dark .navbar-item
+{
+  transition: .7s;
+  animation: navAnimOpen .7s ease-in-out;
+}
+
+.navbar .active{
+  border-bottom: thick ridge var(--primary-text-color);
+  &:hover{
+    border-bottom: thick ridge var(--accent-color-main);
+  }
+}
+
+.navbar-menu {
+  animation: navAnimOpen .7s ease-in-out;
+}
+
+@keyframes navAnimOpen {
+  0% {display: none;opacity: 0;max-height: 0;}
+  1% {display: block;opacity: 0;}
+  100% {opacity: 1;max-height: 100%;}  
+}
+
+#arrow1, #arrow2, #arrow3{
+  transition: all 1s ease;
+}
+
+#logo-brand{
+  height: 50px;
+  max-width: 100%;
+  max-height: 1.75rem;
+  transition: all 1s ease;
+  
+  &:hover, &:focus, &:active{
+    transform: rotateZ(18deg);
+
+    #arrow1{
+      transform: rotateZ(45deg) translate(30%, -125%);
+    }    
+    #arrow2{
+      transform: rotateZ(45deg) translate(18.5%, -97.5%);
+    }    
+    #arrow3{
+      transform: rotateZ(45deg) translate(7%, -70%);
+    }    
+  }
+}
+

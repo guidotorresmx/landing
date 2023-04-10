@@ -1,0 +1,74 @@
+
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "common/variable";
+@import "common/helper";
+@import "themes/theme";
+:root {
+    body {
+        margin: 0;
+        height: 100vh;
+        padding-top: 45px;
+        a {
+            color: inherit;
+            &:hover,
+            &:hover .iconfont {
+                text-decoration: none;
+                color: $activeColor!important;
+                
+            }
+        }
+        .tag.post-item-tag {
+            margin-right: 5px;
+            font-weight: bold;
+            color: $accent-color-main;
+            font-style: normal; 
+            border-radius: 10px;
+            background: transparent;
+            border: 2px solid $accent-color-main;
+        }
+        .button.is-default {
+            height: 40px;
+            border: none;
+            border-radius: $borderRadius;
+            color: var(--second-text-color);
+            background: var(--third-bg-color);
+        }
+        >main {
+            flex-grow: 2;
+            flex-basis: 0;
+        }
+        >footer {
+            margin: 0 30px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            .sns-container .iconfont {
+                margin: 0 5px;
+                font-size: 30px;
+                background-color: #eee;
+                border-radius: 50%;
+            }
+            .sns-container .fa {
+                margin: 0 5px;
+                font-size: 1.25rem;
+                border-radius: 50%;
+            }
+            
+            section.sns-container a.button.is-dark{
+                background-color: var(--primary-bg-color);
+                &:hover,
+                &:hover .iconfont {
+                  i{
+                    text-decoration: none;
+                    color: $activeColor!important;
+                    animation: bounce 1s ease infinite;
+                  }
+                }
+            
+            }    
+        }
+    }
+}
+
+
+
+@import "header";

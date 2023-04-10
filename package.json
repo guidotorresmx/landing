@@ -8,6 +8,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.8.3",
     "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "parcel": "^2.8.3"
   }
 }
