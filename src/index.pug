@@ -12,7 +12,7 @@ html(lang=`${ lang }` class= `appearance-${ theme }`)
     meta(name="description" content= description || theme)
     meta(name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1")
 
-    //link(rel="icon" href= url_for(theme.favicon))
+    link(rel="icon" href= url_for('./assets/logo.svg'))
     link(rel="stylesheet" href= url_for('./style/common/bulma.css'))
     link(rel="stylesheet" href= url_for('./style/base.scss'))
     link(rel="stylesheet" href= url_for('./style/common/helper.scss'))
