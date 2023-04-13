@@ -1,0 +1,32 @@
+block append head
+  script(src= url_for("./js/nav.js"), defer)
+
+nav.header-widget.navbar.is-fixed-top.is-hidden-print.is-dark#navbar.active(role='navigation' aria-label='main navigation')
+  .navbar-brand.is-dark
+    a.navbar-item.has-text-centered-mobile.is-dark(href='https://www.guidotorres.mx')
+      include logo
+
+    a.navbar-item.has-text-centered-mobile.is-dark.is-flex.is-flex-shrink-1.is-flex-grow-5.is-justify-content-center(href='https://www.guidotorres.mx')  
+      | guidotorresmx
+    a.navbar-burger.burger.is-dark(role='button' aria-label='menu' aria-expanded='false' data-target='navbar-main')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+
+  #navbar-main.navbar-menu.is-dark
+    .navbar-start.has-text-centered-touch.is-dark
+      a.navbar-item.is-dark(href='https://www.guidotorres.mx/blog')
+        | Blog
+      a.navbar-item.is-dark(href='https://www.guidotorres.mx/blog/about')
+        | About
+      a.navbar-item.is-dark(href='https://www.guidotorres.mx/resume')
+        | Resume
+
+      span.navbar-item
+      span.navbar-item.is-dark.is-spaced
+        block topic
+
+    .navbar-end.has-text-centered-mobile.is-size-6-mobile.is-dark.is-spaced
+      .navbar-item.is-dark
+        .field.is-grouped.is-grouped-centered.is-dark
+          include sns
