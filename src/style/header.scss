@@ -6,7 +6,7 @@
 
   a.button.is-dark {
     color: var(--primary-text-color);
-  
+    background-color: unset;
     &:hover,
     &:hover .iconfont {
       i{
@@ -27,11 +27,18 @@
   }
 
   .is-dark{
-    background: var(--top-bar-bg-color);
+    //background: var(--top-bar-bg-color);
   }
   
   
 }
+
+@media screen and (max-width: 1023px){
+  .navbar-menu {
+      background-color: unset;
+  }
+}
+
 
 nav#navbar{
   transition: all .4s ease-in-out;
