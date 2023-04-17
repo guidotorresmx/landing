@@ -2,20 +2,22 @@
   "name": "landing",
   "private": true,
   "version": "0.0.0",
+  "source": "src/index.pug",
   "scripts": {
-    "start": "parcel index.pug",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "parcel serve",
+    "build": "parcel build --dist-dir docs"
   },
   "devDependencies": {
+    "@parcel/resolver-glob": "^2.8.3",
     "@parcel/transformer-pug": "^2.8.3",
     "@parcel/transformer-sass": "^2.8.3",
-    "@parcel/resolver-glob": "^2.8.3",
+    "cssnano": "^5.1.15",
+    "postcss": "^8.4.22",
     "vite": "^2.9.9"
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "howler": "^2.2.3",
     "parcel": "^2.8.3",
     "sass": "^1.62.0"
   }

@@ -1,4 +1,6 @@
+
 import anime from 'animejs/lib/anime.es.js';
+import {Howl, Howler} from 'howler';
 
 const wrapper = document.getElementById('tiles');
 
@@ -12,12 +14,15 @@ const getGridSize = () => {
 
 
 let [columns, rows] = getGridSize();
-
+let counter = 0;
 const handleOnClick = index => {
     toggled = !toggled;
+    counter = counter + 1;
+    
+
     anime({
         targets: ".tile",
-        opacity: toggled ? .1 : .95,
+        opacity: toggled ? 0 : .95,
         scale: [
             {value: .1, easing: 'easeOutSine', duration: 50},
             {value: 1, easing: 'easeInOutQuad', duration: 75}
@@ -29,12 +34,21 @@ const handleOnClick = index => {
     })
 }
 
+var sound = new Howl({
+    src: ['./assets/sound.wav']
+  });
+Howler.volume(.2);
+const handleOnHover = index => {
+    sound.play();
+    console.log(index);  
+}
+
 const createTile = (index) => {
     const tile = document.createElement("div");
     tile.classList.add("tile");
     tile.classList.add(`column-${index%columns}`);
     tile.classList.add(`row-${Math.floor(index/columns)}`);
-    console.log(index);
+    tile.onmouseenter = e => handleOnHover(index);
     tile.onclick = e => handleOnClick(index);
     return tile;
 }

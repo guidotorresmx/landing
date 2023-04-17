@@ -1,15 +1,6 @@
 @import "common/variable";
 
-.header-widget{
-  display: none;
-  &.scroll-down{
-    display: flex
-  }
-  &.scroll-up{
-    display: flex
-  }
-  
-}
+
 
 #tiles {
   height: 100vh;
@@ -41,7 +32,7 @@
 }
 
 .tile:hover {
-  opacity: .05;
+  opacity: .5;
   //transition: opacity .4s ease-out;
 }
 

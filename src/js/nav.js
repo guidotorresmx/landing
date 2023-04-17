@@ -13,8 +13,9 @@ function hideNav(){
       $navbar.classList.remove('scroll-up');
     }
     if(currentScroll > lastScroll && !$navbar.classList.contains('scroll-down')){
-      $navbar.classList.remove('scroll-up');
-      $navbar.classList.add('scroll-down');
+      //$navbar.classList.remove('scroll-up');
+      //$navbar.classList.add('scroll-down');
+      $navbar.classList.add('scroll-up');        
     }
     if(currentScroll < lastScroll && !$navbar.classList.contains('scroll-up')){
       $navbar.classList.remove('scroll-down');
