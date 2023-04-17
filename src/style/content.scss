@@ -1,10 +1,27 @@
 @import "common/variable";
 
+.header-widget{
+  display: none;
+  &.scroll-down{
+    display: flex
+  }
+  &.scroll-up{
+    display: flex
+  }
+  
+}
+
 #tiles {
   height: 100vh;
-  width: 100vw;
+  width: auto ;
+  left: 0px;
   display: grid;
   position: relative;
+  padding: 0;
+  padding-top: 1px;
+  padding-right: 2px;
+  padding-left: 1px;
+  padding-bottom: 2px;
   z-index: 2;
   grid-template-columns: repeat(var(--columns), 1fr);
   grid-template-rows: repeat(var(--rows), 1fr);
@@ -13,18 +30,24 @@
 .tile {
   cursor: pointer;
   position: relative;
-  
+  opacity: .95;
 }
 
 .tile::before {
-  background-color: rgba(20,20,20,1);
+  background-color: var(--primary-bg-color);
   content: "";
   position: absolute;
-  inset: 0.5px;
+  inset: 1.5px;
+}
+
+.tile:hover {
+  opacity: .05;
+  //transition: opacity .4s ease-out;
 }
 
 main {
-  animation: background-pan 10s linear infinite;
+  top: 0;
+  animation: background-pan 7s linear infinite;
   background: linear-gradient(
     to right,
     $accent-color-main,
@@ -32,7 +55,6 @@ main {
     $accent-color-main
   );
   background-size: 200%;
-
 }
 
 @keyframes background-pan {
