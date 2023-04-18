@@ -5,7 +5,7 @@
   "source": "src/index.pug",
   "scripts": {
     "start": "parcel serve",
-    "build": "parcel build --dist-dir docs --public-url http://www.guidotorres.mx/landing/"
+    "build": "parcel build --dist-dir docs/landing --public-url ./"
   },
   "devDependencies": {
     "@parcel/resolver-glob": "^2.8.3",
