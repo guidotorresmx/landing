@@ -2,10 +2,12 @@
 
 This is the repository for my personal website. The website is built using the following technologies:
 
+- Node 13
+- React 18
 - Pug
 - BulmaJS
 - SCSS
-- Parcel
+- Parcel  
 - ES6
 
 ## Getting Started
