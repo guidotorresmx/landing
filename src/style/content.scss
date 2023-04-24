@@ -1,10 +1,8 @@
 @import "common/variable";
 
-
-
 #tiles {
   height: 100vh;
-  width: auto ;
+  width: auto;
   left: 0px;
   display: grid;
   position: relative;
@@ -21,7 +19,7 @@
 .tile {
   cursor: pointer;
   position: relative;
-  opacity: .95;
+  opacity: 0.95;
 }
 
 .tile::before {
@@ -32,13 +30,13 @@
 }
 
 .tile:hover {
-  opacity: .5;
+  opacity: 0.5;
   //transition: opacity .4s ease-out;
 }
 
 main {
   top: 0;
-  animation: background-pan 7s linear infinite;
+  animation: background-pan 14s linear infinite;
   background: linear-gradient(
     to right,
     $accent-color-main,
@@ -49,10 +47,71 @@ main {
 }
 
 @keyframes background-pan {
-  from{
+  from {
     background-position: 0% center;
   }
-  to{
+  to {
     background-position: -200% center;
   }
+}
+
+@keyframes fly {
+  0% {
+    transform: rotate(0turn) translate(0px) rotate(0turn);
+  }
+  50% {
+    transform: rotate(1turn) translate(100px) rotate(-1turn);
+  }
+  100% {
+    transform: rotate(0turn) translate(0px) rotate(0turn);
+  }
+}
+
+@keyframes flyPlus {
+  0% {
+    transform: rotate(0turn) translate(0px) rotate(0turn);
+  }
+  50% {
+    transform: rotate(-1turn) translate(25vh) rotate(1turn);
+  }
+  100% {
+    transform: rotate(0turn) translate(0px) rotate(0turn);
+  }
+}
+
+.one {
+  position: absolute;
+  border-radius: 100%;
+  width: 50vw;
+  height: 50vh;
+  background-color: $accent-color-main;
+  left: -5rem;
+  top: 15rem;
+  z-index: 0;
+  filter: blur(100px);
+  animation: fly 12s linear infinite;
+}
+
+.two {
+  position: absolute;
+  border-radius: 25%;
+  width: 40vw;
+  height: 70vh;
+  background-color: $accent-color-sec;
+  bottom: -3rem;
+  right: -8rem;
+  filter: blur(100px);
+  animation: flyPlus 16.333s linear infinite;
+}
+
+.three {
+  position: absolute;
+  border-radius: 100%;
+  width: 30vw;
+  height: 30vh;
+  bottom: 6rem;
+  right: -10rem;
+  background-color: $accent-color-main;
+  filter: blur(100px);
+  animation: flyPlus 16s linear infinite;
 }
