@@ -28,7 +28,7 @@ const handleOnClick = (index) => {
   });
 };
 
-sounds = [
+let sounds = [
   "./public/1.mp3",
   "./public/2.mp3",
   "./public/3.mp3",
