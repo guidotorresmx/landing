@@ -29,7 +29,7 @@ const handleOnClick = (index) => {
 };
 
 var sound = new Howl({
-  src: ["./assets/sound.wav"],
+  src: ["./public/sound.wav"],
 });
 Howler.volume(0.2);
 const handleOnHover = (index) => {
