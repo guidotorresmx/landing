@@ -79,6 +79,10 @@ main {
   }
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
 .one {
   position: absolute;
   border-radius: 100%;
@@ -98,7 +102,7 @@ main {
   width: 40vw;
   height: 70vh;
   background-color: $accent-color-sec;
-  bottom: -3rem;
+  bottom: 20rem;
   right: -8rem;
   filter: blur(100px);
   animation: flyPlus 16.333s linear infinite;
@@ -109,8 +113,8 @@ main {
   border-radius: 100%;
   width: 30vw;
   height: 30vh;
-  bottom: 6rem;
-  right: -10rem;
+  bottom: 16rem;
+  right: 10rem;
   background-color: $accent-color-main;
   filter: blur(100px);
   animation: flyPlus 16s linear infinite;

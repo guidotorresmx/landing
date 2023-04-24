@@ -3,9 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "source": "src/index.pug",
+  "targets": {
+    "default": {
+      "distDir": "./docs"
+    }
+  },
   "scripts": {
     "start": "parcel serve",
-    "build": "parcel build --dist-dir docs/landing --public-url https://www.guidotorres.mx/landing/"
+    "build": "parcel build --public-url https://www.guidotorres.mx/landing/"
   },
   "devDependencies": {
     "@parcel/resolver-glob": "^2.8.3",
