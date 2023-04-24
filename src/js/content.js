@@ -28,12 +28,25 @@ const handleOnClick = (index) => {
   });
 };
 
-var sound = new Howl({
-  src: ["./public/sound.wav"],
-});
+sounds = [
+  "./public/1.mp3",
+  "./public/2.mp3",
+  "./public/3.mp3",
+  "./public/4.mp3",
+  "./public/5.mp3",
+  "./public/6.mp3",
+  "./public/7.mp3",
+];
+let howls = {};
+for (let i = 0; i < sounds.length; i++) {
+  howls[i] = new Howl({
+    src: [sounds[i]],
+  });
+}
+
 Howler.volume(0.2);
 const handleOnHover = (index) => {
-  sound.play();
+  howls[Math.floor(Math.random() * sounds.length)].play();
 };
 
 const createTile = (index) => {

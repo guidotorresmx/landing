@@ -16,6 +16,9 @@
       "publicUrl": "https://www.guidotorres.mx/landing/"
     }
   },
+  "distDir": "./docs",
+  "source": "./src/index.pug",
+  "publicUrl": "https://www.guidotorres.mx/landing/",
   "scripts": {
     "start": "parcel serve",
     "build": "parcel build"
