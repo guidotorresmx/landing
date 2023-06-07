@@ -1,7 +1,7 @@
 {
   "name": "landing",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "staticFiles": {
     "staticPath": "src/public",
     "staticOutPath": "public",
@@ -12,13 +12,9 @@
   "targets": {
     "default": {
       "distDir": "./docs",
-      "source": "./src/index.pug",
-      "publicUrl": "https://www.guidotorres.mx/landing/"
+      "source": "./src/index.pug"
     }
   },
-  "distDir": "./docs",
-  "source": "./src/index.pug",
-  "publicUrl": "https://www.guidotorres.mx/landing/",
   "scripts": {
     "start": "parcel serve",
     "build": "parcel build"
