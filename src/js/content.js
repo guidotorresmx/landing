@@ -1,7 +1,5 @@
 import anime from "animejs/lib/anime.es.js";
-import { getGridSize } from "./utils/gridHandler";
-
-const wrapper = document.getElementById("tiles");
+import { getGridSize, createGrid } from "./utils/gridHandler";
 
 const gridProps = {
   msSpeed: 50,
@@ -25,52 +23,6 @@ const handleOnClick = (index) => {
       from: index,
     }),
   });
-};
-
-let sounds = [
-  "./public/1.mp3",
-  "./public/2.mp3",
-  "./public/3.mp3",
-  "./public/4.mp3",
-  "./public/5.mp3",
-  "./public/6.mp3",
-  "./public/7.mp3",
-];
-let howls = {};
-for (let i = 0; i < sounds.length; i++) {
-  howls[i] = new Howl({
-    src: [sounds[i]],
-  });
-}
-
-Howler.volume(0.2);
-const handleOnHover = (index) => {
-  //howls[Math.floor(Math.random() * sounds.length)].play();
-};
-
-const createTile = (index) => {
-  let [columns, rows] = getGridSize(gridProps);
-  const tile = document.createElement("div");
-  tile.classList.add("tile");
-  tile.classList.add(`column-${index % columns}`);
-  tile.classList.add(`row-${Math.floor(index / columns)}`);
-  tile.onmouseenter = (e) => handleOnHover(index);
-  tile.onclick = (e) => handleOnClick(index);
-  return tile;
-};
-
-const createTiles = (quantity) => {
-  Array.from(Array(quantity)).map((tile, index) => {
-    wrapper.appendChild(createTile(index));
-  });
-};
-
-const createGrid = () => {
-  wrapper.innerHTML = "";
-  let [columns, rows] = getGridSize(gridProps);
-  wrapper.style.setProperty("--columns", columns);
-  wrapper.style.setProperty("--rows", rows);
-  createTiles(columns * rows);
 };
 
 const handleOnLoad = () => {
@@ -104,6 +56,15 @@ const cornerAnimation = () => {
   });
 };
 
-createGrid();
-window.onresize = () => createGrid();
+const updateGrid = () => {
+  createGrid(gridProps);
+  document
+    .querySelectorAll(".tile")
+    .forEach((tile) =>
+      tile.addEventListener("click", () => handleOnClick(tile.id))
+    );
+};
+
+updateGrid(gridProps);
+window.onresize = () => updateGrid();
 window.onload = () => handleOnLoad();

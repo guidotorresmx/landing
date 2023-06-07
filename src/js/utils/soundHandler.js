@@ -1,6 +1,6 @@
 import { Howl, Howler } from "howler";
 
-export function setSounds() {
+export function initSounds() {
   let sounds = [
     "./public/1.mp3",
     "./public/2.mp3",
@@ -18,9 +18,11 @@ export function setSounds() {
   }
 
   Howler.volume(0.2);
-  const soundHover = (index) => {
-    //howls[Math.floor(Math.random() * sounds.length)].play();
-  };
+  return howls;
 }
 
-export default { setSounds };
+export function onHoverSound(howls, index) {
+  howls[Math.floor(Math.random() * sounds.length)].play();
+}
+
+export default { initSounds };
