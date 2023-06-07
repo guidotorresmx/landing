@@ -4,16 +4,15 @@ import { getGridSize, createGrid } from "./utils/gridHandler";
 const gridProps = {
   msSpeed: 50,
   pxSize: 50,
+  toggled: false,
 };
 
-toggled = false;
-
 const handleOnClick = (index) => {
-  toggled = !toggled;
+  gridProps.toggled = !gridProps.toggled;
   let [columns, rows] = getGridSize(gridProps);
   anime({
     targets: ".tile",
-    opacity: toggled ? 0 : 0.95,
+    opacity: gridProps.toggled ? 0 : 0.95,
     scale: [
       { value: 0.1, easing: "easeOutSine", duration: 50 },
       { value: 1, easing: "easeInOutQuad", duration: 75 },

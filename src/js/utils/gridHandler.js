@@ -3,6 +3,7 @@ const wrapper = document.getElementById("tiles");
 function createTile(gridProps, index) {
   let [columns, rows] = getGridSize(gridProps);
   const tile = document.createElement("div");
+  tile.style.opacity = gridProps.toggled ? 0 : 0.95;
   tile.classList.add("tile");
   tile.classList.add(`column-${index % columns}`);
   tile.classList.add(`row-${Math.floor(index / columns)}`);
