@@ -1,5 +1,5 @@
 import anime from "animejs/lib/anime.es.js";
-import { getGridSize, createGrid } from "./utils/gridHandler";
+import { getGridSize, createGrid, updateGrid } from "./utils/gridHandler";
 
 const gridProps = {
   msSpeed: 50,
@@ -55,15 +55,6 @@ const cornerAnimation = () => {
   });
 };
 
-const updateGrid = () => {
-  createGrid(gridProps);
-  document
-    .querySelectorAll(".tile")
-    .forEach((tile) =>
-      tile.addEventListener("click", () => handleOnClick(tile.id))
-    );
-};
-
-updateGrid(gridProps);
-window.onresize = () => updateGrid();
+updateGrid(gridProps, handleOnClick);
+window.onresize = () => updateGrid(gridProps, handleOnClick);
 window.onload = () => handleOnLoad();
