@@ -31,4 +31,13 @@ export function createGrid(gridProps) {
   createTiles(gridProps, columns * rows);
 }
 
+export function updateGrid(gridProps, handleOnClick) {
+  createGrid(gridProps);
+  document
+    .querySelectorAll(".tile")
+    .forEach((tile) =>
+      tile.addEventListener("click", () => handleOnClick(tile.id))
+    );
+}
+
 export default { getGridSize, createGrid };
