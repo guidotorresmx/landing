@@ -48,7 +48,7 @@ const cornerAnimation = () => {
     rotateZ: anime.stagger([0, 90], {
       grid: [14, 5],
       from: "center",
-      axis: "x",
+      axis: last - columns + 1,
     }),
     delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
     easing: "easeInOutQuad",
