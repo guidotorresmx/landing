@@ -16,6 +16,7 @@
     }
   },
   "scripts": {
+    "dev": "parcel serve",
     "start": "parcel serve",
     "build": "parcel build"
   },
